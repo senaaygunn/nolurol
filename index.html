@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kim bu adam</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #ffe4e1; /* Tatlı bir arka plan rengi */
+    }
+    img {
+      width: 300px;
+      height: auto;
+      margin: 20px 0;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      background-color: #ffb6c1; /* Toz pembe buton rengi */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff69b4; /* Biraz daha koyu pembe */
+    }
+    #no-btn {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bu adam kimdir?</h1>
+  <img src="<a href="https://resmim.net/"><img src="https://resmim.net/cdn/2024/12/19/DREfNo.jpg" alt="resim yükle" border="0" /></a>
+  <div class="button-container">
+    <button id="yes-btn">Tırtıl</button>
+    <button id="no-btn">Can Yüksel</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById('no-btn');
+    const yesButton = document.getElementById('yes-btn');
+
+    // Hayır butonunun kaçması
+    noButton.addEventListener('mouseenter', () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+
+    // Evet butonuna tıklandığında yeni sayfa açma
+    yesButton.addEventListener('click', () => {
+      document.body.innerHTML = `
+        <h1>Tebrikler, doğru cevabı seçtiniz!</h1>
+        <img src="<a href="https://resmim.net/"><img src="https://resmim.net/cdn/2024/12/19/DRET8M.jpg" alt="resim yükle" border="0" /></a>
+      `;
+    });
+  </script>
+</body>
+</html>
